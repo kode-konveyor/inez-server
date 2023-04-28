@@ -1,5 +1,5 @@
 import { Contract, bound } from "cdd-ts";
-import { GetSelbriControllerService } from "../src/services/GetSelbriControllerService.js";
+import { GetSelbriControllerService } from "../src/controllers/GetSelbriControllerService.js";
 import { GetSelbriByIdServiceContract } from "../integrationcontracts/GetSelbriByIdServiceContract.js";
 import { SelbriTestData } from "../testdata/SelbriTestData.js";
 import { HTTP_OK } from "../src/Constants.js";

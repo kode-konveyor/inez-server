@@ -4,13 +4,14 @@ import { type SelbriDTO } from "../src/DTO/SelbriDTO.js";
 import Sinon from "sinon";
 import { SelbriTestData } from "./SelbriTestData.js";
 
-const responseStub = Sinon.stub<express.Response<SelbriDTO>>(express.response);
+const responseStub = Sinon.stub<express.Response>(express.response);
 responseStub.status.returns(responseStub);
 
 export const ServiceArgsTestData = {
   req: {
     params: { selbriId: "foo" },
   } as express.Request<{ selbriId: string }, SelbriDTO>,
+  emptyReq: {} as express.Request,
   saveReq: {
     body: SelbriTestData.default,
   } as express.Request,

@@ -2,8 +2,8 @@
 import { CommonRoutesConfig } from "./CommonRoutesConfig.js";
 import { bound } from "cdd-ts";
 import type express from "express";
-import { GetSelbriControllerService } from "../services/GetSelbriControllerService.js";
-import { SaveSelbriControllerService } from "../services/SaveSelbriControllerService.js";
+import { GetSelbriControllerService } from "../controllers/GetSelbriControllerService.js";
+import { SaveSelbriControllerService } from "../controllers/SaveSelbriControllerService.js";
 
 const MODEL = "model";
 

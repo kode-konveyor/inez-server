@@ -2,10 +2,12 @@ import type express from "express";
 import { HTTP_OK } from "../Constants.js";
 import { GetSelbriByIdService } from "../dataAccess/GetSelbriByIdService.js";
 import { type SelbriDTO } from "../DTO/SelbriDTO.js";
+import { NormalizeSelbriService } from "../services/NormalizeSelbriService.js";
 
 export class GetSelbriControllerService {
   constructor(
-    readonly getSelbriById = GetSelbriByIdService.prototype.getSelbriById
+    readonly getSelbriById = GetSelbriByIdService.prototype.getSelbriById,
+    readonly normalizeSelbri = NormalizeSelbriService.prototype.normalizeSelbri
   ) {}
 
   async getSelbriController(
@@ -16,6 +18,6 @@ export class GetSelbriControllerService {
     res
       .status(HTTP_OK)
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      .send({ id: selbri!.id, representation: selbri!.representation });
+      .send(this.normalizeSelbri(selbri!));
   }
 }

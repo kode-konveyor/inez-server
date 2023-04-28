@@ -1,5 +1,5 @@
 import { Contract, bound, serialize } from "cdd-ts";
-import { SaveSelbriControllerService } from "../src/services/SaveSelbriControllerService.js";
+import { SaveSelbriControllerService } from "../src/controllers/SaveSelbriControllerService.js";
 import { DATABASE_UP } from "./Constants.js";
 import { ServiceArgsTestData } from "../testdata/ServiceArgsTestData.js";
 import { HTTP_CREATED } from "../src/Constants.js";
