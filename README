@@ -1,0 +1,69 @@
+Knowledge representation based on experiences of metamodel-based architecture modeling and nadural language dictionaries.
+
+(No point to look at the code. This project is long abandoned, if the folowing gets implemented that will probably be done in another project.
+I am just using this README to write up my thoughts.)
+
+Dictionaries for natural languages are hard to implement for the following reasons:
+1. A word usually have different meanings
+2. How do you describe the meaning of a word? The best approach so far is that of wordnet: you basically define relationships between words.
+
+Metamodel-based architecture modeling works like this:
+1. You come up with metamodel elements. You define those elements through their possible relationships, and the constrainst on those relationships.
+  Note that this fully defines the metamodel element for all purposes within the model itself.
+2. You use these metamodel elements to define actual model elements.
+
+A metamodel is basically the language used to describe the model. When you define a metamodel element, nothing stops you to give it the same name as another metamodel element, apart obvious useability considerations.
+Architecture models however operate on a limited domain. Natural languages - oerating on unlimited domain - have different useability considerations, 
+thus they do have words describing different meanings. Note that even if you have two metamodel elements with the same name, their ID will still be different.
+
+In the model Used by Zenta metaamodel elements and relationships are explicitly marked as such, and that marking is somewhat cumbersome
+(is something appears in a view marked as Template, then it is a metamodel element). This is however an arbitrary limitation.
+Other ontology models (like Protégé) do not have this.
+
+From the practical standpoint the most important limitation is that a relationship can only be between two elements in Zenta.
+Natural languages do not have this limitation: e.g. the word 'give' describes a relationship between the person who gives, the object which s given,
+and the person to whom the object is given to.
+
+But natural languages are very hard to process automatically, so they are not adequate to use for architecture modeling.
+
+Note that architecture modeling is nothing else than the definition of a domain specific language,
+and the representation of knowledge about that specific domain. And a good architecture modeling tool can be used to describe _any_ domain,
+so it is not domain specific itself.
+
+But there is a language which is designed to be spoken, still convey precise meanings, based on predicate logic: Lojban.
+
+In Lojban, sumti is the same thing as a (metamodel) element in an architecture model. And bridi is the construct which describes relationships,
+between any (practically up to 5) sumtis.
+
+So the model is the following:
+
+A sumti have an id and a string representation.
+
+A bridi have an ID and a tuple of sumties. The first of them is the meaning of the bridi, the rest of them are its "arguments".
+
+Well actually everything in the model has an ID, a string representation, and zero or more reference to other stuff in the model.
+If there are zero references, we call it a sumti, if there are more, it is a bridi.
+
+A bridi's string representation is computed using messageFormat(sumti1,...sumtiN).
+
+As an illustration, some of the first sumties defined will probably be
+* `thing`
+* `{1} is a {2}`
+* `sumti`
+* `bridi`
+
+So the bridi `({1} is a {2}, sumti, thing)` will have the string representation `sumti is a thing`.
+
+
+Well, probably someone will make sumties with string representation using actual lojban (spanish, german, etc...) words at a point, but my goal
+here is just to use the structure, and not interested in actually learning yet another language (Javascript was big enough trauma already).
+
+Implementing inference and the usual predicate logic stuff based on this representation should be straightforward to anyone knowing how to do that.
+
+Diagrams in architecture models are already described using models. As soon as they are metamodeled, they can be stored in the same storage.
+
+The same is true for constructs used to structure models (e.g. folders), and for access control.
+
+Version control and support for multiple repositories - with models referencing sumties/bridis from other repositories however should be embedded in the model.
+For that purpose a full ID is in the form `<repository>:<id>:<version>`.
+

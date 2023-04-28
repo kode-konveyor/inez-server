@@ -1,0 +1,47 @@
+{
+  "name": "zenta2-server",
+  "version": "0.1.0",
+  "description": "server side of knowledge representation framework",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && node --unhandled-rejections=strict ./dist/app.js",
+    "preinstall": "git config core.hooksPath .githooks",
+    "qa": "npm run lint &&npm run test&& npm run integrationtest&& npm run mutate",
+    "mutate": "stryker run && tools/checktsmutate",
+    "test": "tsc && runContracts",
+    "integrationtest": "runContracts -c 'integrationcontracts/*' -n 4",
+    "lint": "eslint . --ext .ts",
+    "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish",
+    "publish:minor": "npm run qa && npm version minor && git push origin develop --tags && npm publish",
+    "publish:major": "npm run qa && npm version major && git push origin develop --tags && npm publish"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "express": "latest",
+    "fs-extra": "latest",
+    "immer": "latest",
+    "mongoose": "latest",
+    "relative": "latest",
+    "shortid": "latest"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "latest",
+    "@types/cors": "latest",
+    "@types/express": "latest",
+    "@types/shortid": "latest",
+    "@types/sinon": "^10.0.14",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "cdd-ts": "../cdd-ts",
+    "esbuild": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-kodekonveyor": "latest",
+    "eslint-plugin-n": "latest",
+    "eslint-plugin-promise": "latest",
+    "sinon": "^15.0.4",
+    "stryker-cli": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,0 +1,9 @@
+/.idea
+*.iml
+/target
+*.class
+.*.swp
+node_modules
+data
+dist
+reports
