@@ -5,6 +5,7 @@ import cors from "cors";
 import { UsersRoutes } from "./src/routes/ModelRoutes.js";
 import { HTTP_OK } from "./src/Constants.js";
 import { type CommonRoutesConfig } from "./src/routes/CommonRoutesConfig.js";
+import fs from "fs";
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -24,6 +25,10 @@ const ROOT_PATH = "/";
 app.get(ROOT_PATH, (req: express.Request, res: express.Response) => {
   res.status(HTTP_OK).send(runningMessage);
 });
+
+const PIDFILE = "tmp/server.pid";
+
+fs.writeFileSync(PIDFILE, String(process.pid));
 
 server.listen(port, () => {
   routes.forEach((route: CommonRoutesConfig) => {

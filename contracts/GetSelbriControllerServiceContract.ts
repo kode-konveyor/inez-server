@@ -32,7 +32,7 @@ export const GetSelbriControllerServiceContract = new Contract<
       >;
       if (
         !responseStub.status.calledOnceWith(HTTP_OK) ||
-        !responseStub.send.calledOnceWith(SelbriTestData.saved)
+        !responseStub.send.calledOnceWith(SelbriTestData.savedDTO)
       )
         throw new Error("not called");
     },

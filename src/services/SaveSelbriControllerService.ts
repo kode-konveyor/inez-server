@@ -5,7 +5,13 @@ import { SaveSelbriService } from "../dataAccess/SaveSelbriService.js";
 export class SaveSelbriControllerService {
   constructor(readonly saveSelbri = SaveSelbriService.prototype.saveSelbri) {}
 
-  saveSelbriController(req: express.Request, res: express.Response): void {
-    res.status(HTTP_CREATED).send(this.saveSelbri(req.body));
+  async saveSelbriController(
+    req: express.Request,
+    res: express.Response
+  ): Promise<void> {
+    const selbri = await this.saveSelbri(req.body);
+    res
+      .status(HTTP_CREATED)
+      .send({ id: selbri.id, representation: selbri.representation });
   }
 }

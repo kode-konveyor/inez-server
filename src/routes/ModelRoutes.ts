@@ -16,7 +16,7 @@ export class UsersRoutes extends CommonRoutesConfig {
     this.app
       .route(`/model/:selbriId`)
       .get(bound(GetSelbriControllerService))
-      .put(bound(SaveSelbriControllerService));
+      .post(bound(SaveSelbriControllerService));
     return this.app;
   }
 }

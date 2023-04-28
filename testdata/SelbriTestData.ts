@@ -6,7 +6,13 @@ export const SelbriTestData = {
     id: "thing",
     representation: "Thing",
   },
+  // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
   saved: {
+    _v: 0,
+    id: "foo",
+    representation: "Thing",
+  } as SelbriDTO,
+  savedDTO: {
     id: "foo",
     representation: "Thing",
   },

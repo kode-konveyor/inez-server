@@ -38,7 +38,7 @@ export const SaveSelbriControllerContract = new Contract<
         >;
         if (!responseStub.status.calledOnceWith(HTTP_CREATED))
           throw new Error(serialize(responseStub.status.args));
-        if (!responseStub.send.calledOnceWith(SelbriTestData.saved))
+        if (!responseStub.send.calledOnceWith(SelbriTestData.savedDTO))
           throw new Error(serialize(responseStub.send.args));
         // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
         if (!saveSelbri.calledOnceWith(SelbriTestData.default))

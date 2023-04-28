@@ -9,8 +9,8 @@ responseStub.status.returns(responseStub);
 
 export const ServiceArgsTestData = {
   req: {
-    body: "foo",
-  } as express.Request,
+    params: { selbriId: "foo" },
+  } as express.Request<{ selbriId: string }, SelbriDTO>,
   saveReq: {
     body: SelbriTestData.default,
   } as express.Request,
