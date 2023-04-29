@@ -1,6 +1,6 @@
 {
   "name": "zenta2-server",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "server side of knowledge representation framework",
   "type": "module",
   "main": "dist/app.js",
