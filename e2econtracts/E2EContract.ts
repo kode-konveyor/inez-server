@@ -8,7 +8,7 @@ const URL = "http://localhost:3000/model/";
 export const E2EContractParties = [1];
 export const E2EContract = {
   check: async () => {
-    const postResponse = await fetch(URL + "1", {
+    const postResponse = await fetch(URL, {
       method: "POST",
       body: JSON.stringify(SelbriTestData.default),
       headers: { "Content-Type": "application/json" },
@@ -20,13 +20,21 @@ export const E2EContract = {
       data.representation !== SelbriTestData.default.representation ||
       String(Object.keys(data)) !== "id,representation"
     )
-      throw new Error(String(Object.keys(data)));
+      throw new Error("post " + String(Object.keys(data)));
 
     const getResponse = await fetch(URL + data.id);
     if (getResponse.status !== 200) throw new Error(String(getResponse.status));
     const getData: SelbriDTO = (await getResponse.json()) as SelbriDTO;
     if (serialize(getData) !== serialize(data))
-      throw new Error(serialize(getData));
+      throw new Error("get " + serialize(getData));
+
+    const listResponse = await fetch(URL);
+    if (listResponse.status !== 200)
+      throw new Error("list " + String(listResponse.status));
+    const listData: Array<SelbriDTO> =
+      (await listResponse.json()) as Array<SelbriDTO>;
+    if (serialize(listData) !== serialize([data]))
+      throw new Error(serialize(listData));
     return 1;
   },
 };
