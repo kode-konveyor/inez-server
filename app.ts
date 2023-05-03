@@ -3,7 +3,6 @@ import * as http from "http";
 
 import cors from "cors";
 import { UsersRoutes } from "./src/routes/ModelRoutes.js";
-import { HTTP_OK } from "./src/Constants.js";
 import { type CommonRoutesConfig } from "./src/routes/CommonRoutesConfig.js";
 import fs from "fs";
 import { MongooseProvider } from "./src/DAO/MongooseProvider.js";
@@ -16,16 +15,13 @@ const routes: Array<CommonRoutesConfig> = [];
 app.use(express.json());
 
 app.use(cors());
+const STATIC_PATH = "www";
+app.use(express.static(STATIC_PATH));
 
 routes.push(new UsersRoutes(app));
 
 const runningMessage = `Server is running`;
 
-const ROOT_PATH = "/";
-
-app.get(ROOT_PATH, (req: express.Request, res: express.Response) => {
-  res.status(HTTP_OK).send(runningMessage);
-});
 await MongooseProvider.makeSureIsConnected();
 
 const PIDFILE = "tmp/server.pid";
