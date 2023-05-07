@@ -1,5 +1,5 @@
 {
-  "name": "zenta2-server",
+  "name": "@kodekonveyor/inez-server",
   "version": "0.2.1",
   "description": "server side of knowledge representation framework",
   "type": "module",
@@ -20,9 +20,9 @@
     "test": "runContracts",
     "integrationtest": "runContracts -c 'integrationcontracts/*' -n 6",
     "lint": "eslint . --ext .ts",
-    "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish",
-    "publish:minor": "npm run qa && npm version minor && git push origin develop --tags && npm publish",
-    "publish:major": "npm run qa && npm version major && git push origin develop --tags && npm publish",
+    "publish:patch": "npm run qa && npm version patch && git push origin develop --tags && npm publish --access=public",
+    "publish:minor": "npm run qa && npm version minor && git push origin develop --tags && npm publish --access=public",
+    "publish:major": "npm run qa && npm version major && git push origin develop --tags && npm publish --access=public",
     "build": "esbuild --bundle app.ts --platform=node --format=esm --external:path --external:express --external:mongoose --outfile=dist/app.js"
   },
   "dependencies": {
@@ -41,7 +41,7 @@
     "@types/shortid": "latest",
     "@types/sinon": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
-    "cdd-ts": "../cdd-ts",
+    "@kodekonveyor/cdd-ts": "latest",
     "esbuild": "latest",
     "eslint": "latest",
     "eslint-config-prettier": "latest",

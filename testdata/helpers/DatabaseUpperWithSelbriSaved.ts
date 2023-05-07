@@ -1,6 +1,6 @@
-import { bound } from "cdd-ts";
+import { bound } from "@kodekonveyor/cdd-ts";
 import { SelbriTestData } from "../SelbriTestData.js";
-import { type EnvironmentManipulatorType } from "cdd-ts/dist/src/types/EnvironmentManipulatorType.js";
+import { type EnvironmentManipulatorType } from "@kodekonveyor/cdd-ts/dist/src/types/EnvironmentManipulatorType.js";
 import { SaveSelbriService } from "../../src/dataAccess/SaveSelbriService.js";
 import { type SelbriDTO } from "../../src/DTO/SelbriDTO.js";
 import { DatabaseUpper } from "./DatabaseUpper.js";

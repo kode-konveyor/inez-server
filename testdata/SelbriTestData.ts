@@ -1,4 +1,4 @@
-import { type TestDataDescriptor } from "cdd-ts/dist/src/types/TestDataDescriptor.js";
+import { type TestDataDescriptor } from "@kodekonveyor/cdd-ts/dist/src/types/TestDataDescriptor.js";
 import { type SelbriDTO } from "../src/DTO/SelbriDTO.js";
 
 export const SelbriTestData = {

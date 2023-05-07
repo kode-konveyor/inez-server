@@ -1,4 +1,4 @@
-import { Contract, bound, serialize } from "cdd-ts";
+import { Contract, bound, serialize } from "@kodekonveyor/cdd-ts";
 import { SelbriTestData } from "../testdata/SelbriTestData.js";
 import { DatabaseDowner } from "../testdata/helpers/DatabaseDowner.js";
 import { GetSelbriByIdService } from "../src/dataAccess/GetSelbriByIdService.js";

@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { SelbriTestData } from "../testdata/SelbriTestData.js";
 import { type SelbriDTO } from "../src/DTO/SelbriDTO.js";
-import { serialize } from "cdd-ts";
+import { serialize } from "@kodekonveyor/cdd-ts";
 
 const URL = "http://localhost:3000/model/";
 

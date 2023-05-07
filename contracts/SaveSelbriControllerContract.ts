@@ -1,4 +1,4 @@
-import { Contract, bound, serialize } from "cdd-ts";
+import { Contract, bound, serialize } from "@kodekonveyor/cdd-ts";
 import { SaveSelbriControllerService } from "../src/controllers/SaveSelbriControllerService.js";
 import { DATABASE_UP } from "./Constants.js";
 import { ServiceArgsTestData } from "../testdata/ServiceArgsTestData.js";

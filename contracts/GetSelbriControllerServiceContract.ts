@@ -1,4 +1,4 @@
-import { Contract, bound } from "cdd-ts";
+import { Contract, bound } from "@kodekonveyor/cdd-ts";
 import { GetSelbriControllerService } from "../src/controllers/GetSelbriControllerService.js";
 import { GetSelbriByIdServiceContract } from "../integrationcontracts/GetSelbriByIdServiceContract.js";
 import { SelbriTestData } from "../testdata/SelbriTestData.js";

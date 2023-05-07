@@ -1,4 +1,4 @@
-import { type EnvironmentManipulatorType } from "cdd-ts/dist/src/types/EnvironmentManipulatorType.js";
+import { type EnvironmentManipulatorType } from "@kodekonveyor/cdd-ts/dist/src/types/EnvironmentManipulatorType.js";
 import { execSync } from "child_process";
 import { UTF_8, STOP_MONGO } from "./Constants.js";
 import { MongooseProvider } from "../../src/DAO/MongooseProvider.js";

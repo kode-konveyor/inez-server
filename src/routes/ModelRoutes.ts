@@ -3,7 +3,7 @@ import { CommonRoutesConfig } from "./CommonRoutesConfig.js";
 import type express from "express";
 import { GetSelbriControllerService } from "../controllers/GetSelbriControllerService.js";
 import { SaveSelbriControllerService } from "../controllers/SaveSelbriControllerService.js";
-import { BoundService } from "cdd-ts/src/util/BoundService.js";
+import { BoundService } from "@kodekonveyor/cdd-ts/src/util/BoundService.js";
 import { ListSelbrisControllerService } from "../controllers/ListSelbrisControllerService.js";
 const MODEL = "model";
 
