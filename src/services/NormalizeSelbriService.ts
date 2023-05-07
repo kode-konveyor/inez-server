@@ -2,6 +2,10 @@ import { type SelbriDTO } from "../DTO/SelbriDTO.js";
 
 export class NormalizeSelbriService {
   normalizeSelbri(selbri: SelbriDTO): SelbriDTO {
-    return { id: selbri.id, representation: selbri.representation };
+    return {
+      id: selbri.id,
+      representation: selbri.representation,
+      references: selbri.references,
+    };
   }
 }

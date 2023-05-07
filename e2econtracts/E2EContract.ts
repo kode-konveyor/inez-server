@@ -18,7 +18,7 @@ export const E2EContract = {
     const data: SelbriDTO = (await postResponse.json()) as SelbriDTO;
     if (
       data.representation !== SelbriTestData.default.representation ||
-      String(Object.keys(data)) !== "id,representation"
+      String(Object.keys(data)) !== "id,representation,references"
     )
       throw new Error("post " + String(Object.keys(data)));
 
